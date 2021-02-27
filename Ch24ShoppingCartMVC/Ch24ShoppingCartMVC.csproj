@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -135,23 +137,41 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartModel.cs" />
-    <Compile Include="Models\DataAccess\Halloween.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Halloween.Context.tt</DependentUpon>
+    <Compile Include="Models\DataAccess\Category.cs">
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataAccess\Halloween.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Halloween.tt</DependentUpon>
+    <Compile Include="Models\DataAccess\Customer.cs">
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataAccess\Halloween.Designer.cs">
+    <Compile Include="Models\DataAccess\HalloweenModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Halloween.edmx</DependentUpon>
+      <DependentUpon>HalloweenModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\HalloweenModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\HalloweenModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HalloweenModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\Invoice.cs">
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\InvoiceData.cs">
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\LineItem.cs">
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\Product.cs">
-      <DependentUpon>Halloween.tt</DependentUpon>
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\State.cs">
+      <DependentUpon>HalloweenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ViewModels\CartViewModel.cs" />
@@ -249,24 +269,24 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <EntityDeploy Include="Models\DataAccess\Halloween.edmx">
+    <EntityDeploy Include="Models\DataAccess\HalloweenModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Halloween.Designer.cs</LastGenOutput>
+      <LastGenOutput>HalloweenModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DataAccess\Halloween.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Halloween.edmx</DependentUpon>
-      <LastGenOutput>Halloween.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DataAccess\Halloween.edmx.diagram">
-      <DependentUpon>Halloween.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\DataAccess\Halloween.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Halloween.edmx</DependentUpon>
-      <LastGenOutput>Halloween.cs</LastGenOutput>
+    <Content Include="Models\DataAccess\HalloweenModel.edmx.diagram">
+      <DependentUpon>HalloweenModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Models\DataAccess\HalloweenModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HalloweenModel.edmx</DependentUpon>
+      <LastGenOutput>HalloweenModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DataAccess\HalloweenModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HalloweenModel.edmx</DependentUpon>
+      <LastGenOutput>HalloweenModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\halloween.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -328,7 +348,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50010/</IISUrl>
+          <IISUrl>http://localhost:55510/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
