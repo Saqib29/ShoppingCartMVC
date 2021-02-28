@@ -138,40 +138,40 @@
     </Compile>
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\DataAccess\Category.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\Customer.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataAccess\HalloweenModel.Context.cs">
+    <Compile Include="Models\DataAccess\Halloween.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HalloweenModel.Context.tt</DependentUpon>
+      <DependentUpon>Halloween.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataAccess\HalloweenModel.cs">
+    <Compile Include="Models\DataAccess\Halloween.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataAccess\HalloweenModel.Designer.cs">
+    <Compile Include="Models\DataAccess\Halloween.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HalloweenModel.edmx</DependentUpon>
+      <DependentUpon>Halloween.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\Invoice.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\InvoiceData.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\LineItem.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\Product.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\State.cs">
-      <DependentUpon>HalloweenModel.tt</DependentUpon>
+      <DependentUpon>Halloween.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ViewModels\CartViewModel.cs" />
@@ -269,23 +269,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <EntityDeploy Include="Models\DataAccess\HalloweenModel.edmx">
+    <EntityDeploy Include="Models\DataAccess\Halloween.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HalloweenModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Halloween.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DataAccess\HalloweenModel.edmx.diagram">
-      <DependentUpon>HalloweenModel.edmx</DependentUpon>
+    <Content Include="Models\DataAccess\Halloween.edmx.diagram">
+      <DependentUpon>Halloween.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="Models\DataAccess\HalloweenModel.Context.tt">
+    <Content Include="Models\DataAccess\Halloween.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HalloweenModel.edmx</DependentUpon>
-      <LastGenOutput>HalloweenModel.Context.cs</LastGenOutput>
+      <DependentUpon>Halloween.edmx</DependentUpon>
+      <LastGenOutput>Halloween.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DataAccess\HalloweenModel.tt">
+    <Content Include="Models\DataAccess\Halloween.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HalloweenModel.edmx</DependentUpon>
-      <LastGenOutput>HalloweenModel.cs</LastGenOutput>
+      <DependentUpon>Halloween.edmx</DependentUpon>
+      <LastGenOutput>Halloween.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\halloween.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
