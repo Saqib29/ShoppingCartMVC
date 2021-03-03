@@ -20,7 +20,8 @@ namespace Ch24ShoppingCartMVC.Controllers {
         {
             CartViewModel model = (CartViewModel)TempData["cart"];
             //if the model is null, then call the method GetCart
-           ________________________________
+            if (model == null)
+                model = cart.GetCart();
             //Passing model to View
             return V___________________________
         }
