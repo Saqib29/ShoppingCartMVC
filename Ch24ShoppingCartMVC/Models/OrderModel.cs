@@ -31,7 +31,7 @@ namespace Ch24ShoppingCartMVC.Models {
             model.LongDescription = product.LongDescription;
             model.UnitPrice = product.UnitPrice;
             model.ImageFile = product.ImageFile;
-            
+            model.Quantity = product.OnHand;
             
             return model;
         }
@@ -39,7 +39,7 @@ namespace Ch24ShoppingCartMVC.Models {
         public List<ProductViewModel> GetProductsList() {
             if (this.products == null)
                 //Call the method GetAllProducts
-                GetAllProducts();
+                this.products = GetAllProducts();
             //Return the products
             return this.products;
         }
@@ -47,19 +47,13 @@ namespace Ch24ShoppingCartMVC.Models {
         {
             List<ProductViewModel> productmodels = new List<ProductViewModel>();
             // Call the GetAllProductsFromDataStore()
-            GetAllProductsFromDataStore();
+            List<Product> products = GetAllProductsFromDataStore();
 
-            System.Collections.IList list = products;
-            for (int i = 0; i < list.Count; i++)
+            foreach (Product p in products)
             {  //Call the method ConvertToViewModel to convert p and pass the method ConvertToViewModel to the method add of the productmodels
-                Product p = (Product)list[i];
                 productmodels.Add(ConvertToViewModel(p));
             }
             return productmodels;
-            //foreach (Product p in products)
-            //{  //Call the method ConvertToViewModel to convert p and pass the method ConvertToViewModel to the method add of the productmodels
-            //    productmodels.Add(ConvertToViewModel(p));
-            //}
         }
         
         public Product GetProductByIdFromDataStore(string id)
@@ -83,7 +77,7 @@ namespace Ch24ShoppingCartMVC.Models {
                 return ConvertToViewModel(GetProductByIdFromDataStore(id));
             else
                 //Get the product from the products where ProductID is matched with id (Using Lambda expression)
-                return (ProductViewModel)this.products.Where(x => x.ProductID == id); 
+                return products.Where(x => x.ProductID == id).FirstOrDefault(); 
         }
               
         

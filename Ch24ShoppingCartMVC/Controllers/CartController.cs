@@ -23,18 +23,18 @@ namespace Ch24ShoppingCartMVC.Controllers {
             if (model == null)
                 model = cart.GetCart();
             //Passing model to View
-            return V___________________________
+            return View(model);
         }
         [HttpPost]
         public RedirectToRouteResult List(OrderViewModel order)
         {
             CartViewModel model = cart.GetCart(order.SelectedProduct.ProductID);
             //Assign the quantity of the selected product to the quantity of the added product
-           ____________________________________________________________
+            model.AddedProduct.Quantity = order.SelectedProduct.Quantity;
             //Call the method AddtoCart
-            _________________________________
+            cart.AddToCart(model);
             //Assign model to the TempData
-            __________________________________________
+            TempData["cart"] = model;
             return RedirectToAction("List", "Cart");
         }
        

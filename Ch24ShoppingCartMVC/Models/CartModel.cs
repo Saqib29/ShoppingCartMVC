@@ -49,7 +49,7 @@ namespace Ch24ShoppingCartMVC.Models{
                 //Get the product id of the added product
                 var id = model.AddedProduct.ProductID;
                 //Find the product in the car that matches the id using lambda expression.
-                var inCart = model.Cart.Where(x => x.ProductID == id);
+                var inCart = model.Cart.Where(x => x.ProductID == id).FirstOrDefault();
                 if (inCart == null)
                     //Call the method AddItemToDataStore
                     AddItemToDataStore(model);
