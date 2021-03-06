@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Ch24ShoppingCartMVC.Models.ViewModels.CheckoutViewModel>
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h1>Checkout</h1>
+
+<table border="1">
+    <thead style="background-color: black; color: white">
+    <th>ProductID</th>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Per Price</th>
+    <th>Total Price per</th>
+
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.EachPrice</td>
+            <td>@item.TotalEachPrice</td>
+
+        </tr>
+
+    }
+
+</table>
+
+@{ 
+    double totalprice = 0;
+}
+
+@foreach (var price in Model)
+{
+    totalprice = (double)price.TotalEachPrice + totalprice;
+}
+
+@{ 
+    double totalpriceWithTax = totalprice + (totalprice * 0.20);
+}
+
+@if (Model.Any())
+{
+    <p>Total Price: @totalprice </p>
+    <p>Total Price including Tax: @totalpriceWithTax</p>
+    <form method="post">
+        <label>Please choose payment option </label>
+        <select name="payment" required>
+            <option value="Visa">Visa</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="PayPal">PayPal</option>
+        </select>
+        <input type="hidden" name="totalPrice" value="@totalprice" />
+        <input type="hidden" name="totalPriceWithTax" value="@totalpriceWithTax" />
+
+        <p>Please Enter your shipping address:</p>
+        <input type="text" name="address" placeholder="Please type shipping address" required />
+        <input type="submit" name="submit" value="Confirm" />
+    </form>
+}
+else
+{
+    <p>Nothing in Cart.</p>
+    <span>Order some item <a href="/Order/Index">here</a></span>
+}

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Confirmation";
+}
+
+<h2>Your Confirmation!!</h2>
+<table border="1">
+    <thead style="background-color: black; color: white">
+    <th>ProductID</th>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Per Price</th>
+    <th>Total Price per</th>
+
+    </thead>
+    @{ 
+        var orders = Session["orders"] as List<Ch24ShoppingCartMVC.Models.ViewModels.CheckoutViewModel>;
+    }
+    @foreach (var item in orders)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.EachPrice</td>
+            <td>@item.TotalEachPrice</td>
+
+        </tr>
+
+    }
+
+</table>
+<br />
+<h5>Total Price: @ViewBag.totalPrice</h5>
+<h5>With Tax: @ViewBag.totalPriceWithTax</h5>
+<h5>Payment Type: @ViewBag.payment</h5>
+<h5>Shipping Address: @ViewBag.address</h5>
+
+<h1>Thank You for order</h1>

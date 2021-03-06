@@ -13,7 +13,7 @@ namespace Ch24ShoppingCartMVC.Models{
             List<ProductViewModel> cart;
             object objCart = HttpContext.Current.Session["cart"];
             //Convert objCart to List<ProductViewModel>
-            cart = (List<ProductViewModel>)objCart;
+            cart = objCart as List<ProductViewModel>;
             if (cart == null)
             {   //Create the object cart
                 cart = new List<ProductViewModel>();
